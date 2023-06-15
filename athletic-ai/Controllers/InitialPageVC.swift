@@ -14,13 +14,19 @@ final class InitialPageVC: UIViewController {
     private var button = UIButton()
     
     override func viewDidLoad() {
-        view.backgroundColor = .systemBackground
         super.viewDidLoad()
+        
+        view.backgroundColor = .systemBackground
         view.addSubviews(logoLabel, subLogoLabel, button)
         
         configureLogo()
         configureSubLogo()
         configureButton()
+    }
+    
+    @objc private func buttonTapped() {
+        let vc = RegistrationVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - UI Configuration
@@ -30,46 +36,18 @@ final class InitialPageVC: UIViewController {
         let targetText = "AI"
         let targetColor = UIColor.systemBlue
         
-        logoLabel.attributedText = makeAttributedString(text: completeText, targetString: targetText, color: targetColor)
+        logoLabel.attributedText = Helper.makeAttributedString(text: completeText, targetString: targetText, color: targetColor)
         
-        setLogoConstraints()
-    }
-    
-    private func setLogoConstraints() {
-        logoLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -90)
-        ])
-    }
-    
-    
-    private func makeAttributedString(text: String, targetString: String, color: UIColor) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: text)
-        
-        // Find the range of the target string within the complete text
-        let range = (text as NSString).range(of: targetString)
-        
-        // Apply the desired color to the target string
-        attributedString.addAttribute(.foregroundColor, value: color, range: range)
-        
-        return attributedString
+        logoLabel.centerX(in: view)
+        logoLabel.centerY(in: view, paddingBottom: 120)
     }
 
     private func configureSubLogo() {
         subLogoLabel.text = "Your AI Powered Coach"
         subLogoLabel.font = UIFont.systemFont(ofSize: 18)
-        setSubLogoConstraints()
+        subLogoLabel.centerX(in: view, top: logoLabel.bottomAnchor, paddingTop: 0)
     }
-    
-    private func setSubLogoConstraints() {
-        subLogoLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            subLogoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            subLogoLabel.topAnchor.constraint(equalTo: logoLabel.bottomAnchor)
-        ])
-    }
-    
+        
     private func configureButton() {
         button.setTitle("Get Started", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
@@ -77,17 +55,10 @@ final class InitialPageVC: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 24
         
-        setButtonConstraints()
-    }
-    
-    private func setButtonConstraints() {
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalToConstant: 0.75 * view.width),
-            button.heightAnchor.constraint(equalToConstant: 50),
-            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        
+        button.centerX(in: view, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 12)
+        button.anchor(width: 0.8 * view.width, height: 50)
     }
 
 }
