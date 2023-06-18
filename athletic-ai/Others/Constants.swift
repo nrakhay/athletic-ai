@@ -5,15 +5,32 @@
 //  Created by Nurali Rakhay on 15.06.2023.
 //
 
-enum Texts {
+enum RegistrationTexts {
     static let headerTopText = "Hey, let's"
     static let headerBottomText = "Create an Account"
     static let firstName = "First Name"
-    static let secondName = "Second Name"
+    static let lastName = "Last Name"
     static let email = "Email"
     static let password = "Password"
     static let register = "Register"
+    static let orText = "Or"
     static let bottomText = "Already have an account? Login"
+}
+
+enum InitialPageTexts {
+    static let appName = "AthleticAI"
+    static let subLogo = "Your AI Powered Coach"
+    static let getStarted = "Get Started"
+}
+
+enum InitialSetupTexts {
+    static let header = "Set up your account"
+    static let gender = "Gender"
+    static let dateOfBirth = "Date of Birth"
+    static let weight = "Weight"
+    static let height = "Height"
+    static let fitnessLevel = "Fitness Level"
+    static let next = "Next"
 }
 
 enum IconNames {
@@ -23,4 +40,9 @@ enum IconNames {
     static let personIcon = "person-icon"
     static let mailIcon = "mail-icon"
     static let keyIcon = "key-icon"
+    static let genderIcon = "two-users-icon"
+    static let calendarIcon = "calendar-icon"
+    static let weightIcon = "weight-scale-icon"
+    static let heightIcon = "swap-icon"
+    static let levelIcon = "levels-icon"
 }

@@ -11,12 +11,14 @@ class InputFieldView: UIView {
     private var textField = UITextField()
     private var container = UIView()
     private var iconImageView = UIImageView()
+//    private var pickerView = UIPickerView()
     
     struct ViewModel {
         let text: String
         let iconName: String
         let width: CGFloat
         let height: CGFloat
+        let hasPickerView: Bool
     }
     
     override init(frame: CGRect) {
@@ -34,10 +36,24 @@ class InputFieldView: UIView {
         textField.backgroundColor = .systemGray6
     }
     
+//    public func customBecomeFirstResponder() {
+//        textField.becomeFirstResponder()
+//    }
+//
+//    public func customResignFirstResponder() {
+//        textField.resignFirstResponder()
+//    }
+    
+    public func getText() -> String? {
+        return textField.text
+    }
+    
     public func configure(with viewModel: ViewModel) {
         textField.anchor(width: viewModel.width, height: viewModel.height)
         textField.attributedPlaceholder =
         NSAttributedString(string: viewModel.text, attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2 ])
+        
+//        textField.delegate = vc as? UITextFieldDelegate
         
         iconImageView.centerX(in: container, width: viewModel.height * 0.5, height: viewModel.height * 0.5)
         iconImageView.centerY(in: container)
@@ -45,10 +61,18 @@ class InputFieldView: UIView {
         iconImageView.contentMode = .scaleAspectFit
         
         container.anchor(width: viewModel.height, height: viewModel.height)
+        
+        if viewModel.hasPickerView {
+            configurePickerView()
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configurePickerView() {
+        
     }
     
 }

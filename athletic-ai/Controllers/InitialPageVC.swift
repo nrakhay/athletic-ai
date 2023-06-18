@@ -32,7 +32,7 @@ final class InitialPageVC: UIViewController {
     //MARK: - UI Configuration
     private func configureLogo() {
         logoLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
-        let completeText = "AthleticAI"
+        let completeText = InitialPageTexts.appName
         let targetText = "AI"
         let targetColor = UIColor.systemBlue
         
@@ -43,18 +43,18 @@ final class InitialPageVC: UIViewController {
     }
 
     private func configureSubLogo() {
-        subLogoLabel.text = "Your AI Powered Coach"
+        subLogoLabel.text = InitialPageTexts.subLogo
         subLogoLabel.font = UIFont.systemFont(ofSize: 18)
         subLogoLabel.centerX(in: view, top: logoLabel.bottomAnchor, paddingTop: 0)
     }
         
     private func configureButton() {
-        button.setTitle("Get Started", for: .normal)
+        button.setTitle(InitialPageTexts.getStarted, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 24
-        
+
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
         button.centerX(in: view, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 12)

@@ -18,6 +18,14 @@ extension UIView {
     }
 }
 
+extension UIStackView {
+    func addArrangedSubviews(_ views: UIView...) {
+        views.forEach { view in
+            addArrangedSubview(view)
+        }
+    }
+}
+
 
 //MARK: - Framing
 
@@ -57,5 +65,17 @@ extension UITextField {
        iconContainerView.addSubview(iconView)
        leftView = iconContainerView
        leftViewMode = .always
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
