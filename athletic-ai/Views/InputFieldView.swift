@@ -11,14 +11,23 @@ class InputFieldView: UIView {
     private var textField = UITextField()
     private var container = UIView()
     private var iconImageView = UIImageView()
-//    private var pickerView = UIPickerView()
+    private var pickerView: UIPickerView?
+    private var pickerData: [Any]?
     
     struct ViewModel {
         let text: String
         let iconName: String
         let width: CGFloat
         let height: CGFloat
-        let hasPickerView: Bool
+        let pickerViewData: [Any]?
+        
+        init(text: String, iconName: String, width: CGFloat, height: CGFloat, pickerViewData: [Any]? = nil) {
+            self.text = text
+            self.iconName = iconName
+            self.width = width
+            self.height = height
+            self.pickerViewData = pickerViewData
+        }
     }
     
     override init(frame: CGRect) {
@@ -62,8 +71,9 @@ class InputFieldView: UIView {
         
         container.anchor(width: viewModel.height, height: viewModel.height)
         
-        if viewModel.hasPickerView {
-            configurePickerView()
+        if let data = viewModel.pickerViewData {
+            pickerData = data
+            configurePickerView(with: data)
         }
     }
     
@@ -71,8 +81,40 @@ class InputFieldView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configurePickerView() {
-        
+    private func configurePickerView(with data: [Any]) {
+        pickerView = UIPickerView()
+        textField.inputView = pickerView
+        pickerView?.delegate = self
+        pickerView?.dataSource = self
     }
     
+}
+
+extension InputFieldView: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if let data = pickerData {
+            return data.count
+        }
+        
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if let data = pickerData {
+            return String(describing: data[row])
+        }
+        
+        return "null"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if let data = pickerData {
+            textField.text = String(describing: data[row])
+            textField.resignFirstResponder()
+        }
+    }
 }

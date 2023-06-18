@@ -17,7 +17,7 @@
 		5C70D8AC2A398AF700EC8436 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70D8AB2A398AF700EC8436 /* Helper.swift */; };
 		5C70D8B02A399C0200EC8436 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70D8AF2A399C0100EC8436 /* Constraints.swift */; };
 		5C70D8BF2A3AF6D700EC8436 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70D8BE2A3AF6D700EC8436 /* InputFieldView.swift */; };
-		5C70D8C12A3B213300EC8436 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70D8C02A3B213300EC8436 /* Constants.swift */; };
+		5C70D8C12A3B213300EC8436 /* ConstantTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70D8C02A3B213300EC8436 /* ConstantTexts.swift */; };
 		5C99E4652A3EDC5600859584 /* InitialSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99E4642A3EDC5600859584 /* InitialSetupVC.swift */; };
 		5C99E4672A3EEE8500859584 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99E4662A3EEE8500859584 /* BlueButton.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		5C70D8AB2A398AF700EC8436 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5C70D8AF2A399C0100EC8436 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		5C70D8BE2A3AF6D700EC8436 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
-		5C70D8C02A3B213300EC8436 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5C70D8C02A3B213300EC8436 /* ConstantTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTexts.swift; sourceTree = "<group>"; };
 		5C99E4642A3EDC5600859584 /* InitialSetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupVC.swift; sourceTree = "<group>"; };
 		5C99E4662A3EEE8500859584 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +123,7 @@
 				5C70D8A32A38EA8600EC8436 /* Extensions.swift */,
 				5C70D8AB2A398AF700EC8436 /* Helper.swift */,
 				5C70D8AF2A399C0100EC8436 /* Constraints.swift */,
-				5C70D8C02A3B213300EC8436 /* Constants.swift */,
+				5C70D8C02A3B213300EC8436 /* ConstantTexts.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				5C70D8BF2A3AF6D700EC8436 /* InputFieldView.swift in Sources */,
 				5C99E4672A3EEE8500859584 /* BlueButton.swift in Sources */,
 				5C70D8A42A38EA8600EC8436 /* Extensions.swift in Sources */,
-				5C70D8C12A3B213300EC8436 /* Constants.swift in Sources */,
+				5C70D8C12A3B213300EC8436 /* ConstantTexts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

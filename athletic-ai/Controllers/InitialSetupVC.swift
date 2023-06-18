@@ -18,12 +18,25 @@ class InitialSetupVC: UIViewController {
     private var heightInput = InputFieldView()
     private var fitnessLevelInput = InputFieldView()
     
-    private var nextButton = UIButton()
-    
     private let genders = ["Male", "Female"]
     private let fitnessLevels = ["Beginner", "Intermediate", "Advanced"]
-    private var weights = [Int]()
-    private var heights = [Int]()
+    private let weights: [Int] = {
+        var array = [Int]()
+        for weight in 35...200 {
+            array.append(weight)
+        }
+        return array
+    }()
+    
+    private let heights: [Int] = {
+        var array = [Int]()
+        for weight in 140...220 {
+            array.append(weight)
+        }
+        return array
+    }()
+    
+    private var nextButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +51,8 @@ class InitialSetupVC: UIViewController {
         configureStackView()
         configureInputFields()
         configureNextButton()
-        fillWeightsAndHeights()
     }
-    
-    private func fillWeightsAndHeights() {
-        for weight in 35...200 {
-            weights.append(weight)
-        }
-        
-        for height in 140...220 {
-            heights.append(height)
-        }
-    }
-    
+
     @objc private func nextTapped() {
         
     }
@@ -70,15 +72,15 @@ class InitialSetupVC: UIViewController {
     }
     
     private func configureInputFields() {
-        genderInput.configure(with: .init(text: InitialSetupTexts.gender, iconName: IconNames.genderIcon, width: view.width * 0.8, height: 50, hasPickerView: true))
+        genderInput.configure(with: .init(text: InitialSetupTexts.gender, iconName: IconNames.genderIcon, width: view.width * 0.8, height: 50, pickerViewData: genders))
         
-        dateOfBirthInput.configure(with: .init(text: InitialSetupTexts.dateOfBirth, iconName: IconNames.calendarIcon, width: view.width * 0.8, height: 50, hasPickerView: true))
+        dateOfBirthInput.configure(with: .init(text: InitialSetupTexts.dateOfBirth, iconName: IconNames.calendarIcon, width: view.width * 0.8, height: 50))
         
-        weightInput.configure(with: .init(text: InitialSetupTexts.weight, iconName: IconNames.weightIcon, width: view.width * 0.8, height: 50, hasPickerView: true))
+        weightInput.configure(with: .init(text: InitialSetupTexts.weight, iconName: IconNames.weightIcon, width: view.width * 0.8, height: 50, pickerViewData: weights))
         
-        heightInput.configure(with: .init(text: InitialSetupTexts.height, iconName: IconNames.heightIcon, width: view.width * 0.8, height: 50, hasPickerView: true))
+        heightInput.configure(with: .init(text: InitialSetupTexts.height, iconName: IconNames.heightIcon, width: view.width * 0.8, height: 50, pickerViewData: heights))
         
-        fitnessLevelInput.configure(with: .init(text: InitialSetupTexts.fitnessLevel, iconName: IconNames.levelIcon, width: view.width * 0.8, height: 50, hasPickerView: true))
+        fitnessLevelInput.configure(with: .init(text: InitialSetupTexts.fitnessLevel, iconName: IconNames.levelIcon, width: view.width * 0.8, height: 50, pickerViewData: fitnessLevels))
     }
 
     private func configureNextButton() {
