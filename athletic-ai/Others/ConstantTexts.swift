@@ -33,6 +33,17 @@ enum InitialSetupTexts {
     static let next = "Next"
 }
 
+enum WorkoutPreferencesTexts {
+    static let header = "Share your preferences"
+    static let exercisePreferences = "Exercise Preferences"
+    static let workoutPlace = "Workout Place"
+    static let workoutsPerWeek = "Workouts Per Week"
+    static let intensityLevel = "Intensity Level"
+    static let workoutDuration = "Workout Duration"
+    static let weightGoal = "Weight Goal"
+    static let next = "Next"
+}
+
 enum IconNames {
     static let googleLogo = "google-logo"
     static let appleLogo = "apple-logo"

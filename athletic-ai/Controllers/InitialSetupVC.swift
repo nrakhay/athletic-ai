@@ -8,7 +8,6 @@
 import UIKit
 
 class InitialSetupVC: UIViewController {
-
     private var headerLabel = UILabel()
     private var stackView = UIStackView()
     
@@ -17,25 +16,7 @@ class InitialSetupVC: UIViewController {
     private var weightInput = InputFieldView()
     private var heightInput = InputFieldView()
     private var fitnessLevelInput = InputFieldView()
-    
-    private let genders = ["Male", "Female"]
-    private let fitnessLevels = ["Beginner", "Intermediate", "Advanced"]
-    private let weights: [Int] = {
-        var array = [Int]()
-        for weight in 35...200 {
-            array.append(weight)
-        }
-        return array
-    }()
-    
-    private let heights: [Int] = {
-        var array = [Int]()
-        for weight in 140...220 {
-            array.append(weight)
-        }
-        return array
-    }()
-    
+
     private var nextButton = UIButton()
     
     override func viewDidLoad() {
@@ -54,7 +35,8 @@ class InitialSetupVC: UIViewController {
     }
 
     @objc private func nextTapped() {
-        
+        let vc = WorkoutPreferencesVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func configureHeaderLabel() {
@@ -72,22 +54,22 @@ class InitialSetupVC: UIViewController {
     }
     
     private func configureInputFields() {
-        genderInput.configure(with: .init(text: InitialSetupTexts.gender, iconName: IconNames.genderIcon, width: view.width * 0.8, height: 50, pickerViewData: genders))
+        genderInput.configure(with: .init(text: InitialSetupTexts.gender, width: view.width * 0.8, height: 50, pickerViewData: InitialSetupData.genders))
         
-        dateOfBirthInput.configure(with: .init(text: InitialSetupTexts.dateOfBirth, iconName: IconNames.calendarIcon, width: view.width * 0.8, height: 50))
+        dateOfBirthInput.configure(with: .init(text: InitialSetupTexts.dateOfBirth, width: view.width * 0.8, height: 50, hasDatePicker: true))
         
-        weightInput.configure(with: .init(text: InitialSetupTexts.weight, iconName: IconNames.weightIcon, width: view.width * 0.8, height: 50, pickerViewData: weights))
+        weightInput.configure(with: .init(text: InitialSetupTexts.weight, width: view.width * 0.8, height: 50, pickerViewData: InitialSetupData.weights, rightViewText: "/ kg"))
         
-        heightInput.configure(with: .init(text: InitialSetupTexts.height, iconName: IconNames.heightIcon, width: view.width * 0.8, height: 50, pickerViewData: heights))
+        heightInput.configure(with: .init(text: InitialSetupTexts.height, width: view.width * 0.8, height: 50, pickerViewData: InitialSetupData.heights, rightViewText: "/ cm"))
         
-        fitnessLevelInput.configure(with: .init(text: InitialSetupTexts.fitnessLevel, iconName: IconNames.levelIcon, width: view.width * 0.8, height: 50, pickerViewData: fitnessLevels))
+        fitnessLevelInput.configure(with: .init(text: InitialSetupTexts.fitnessLevel, width: view.width * 0.8, height: 50, pickerViewData: InitialSetupData.fitnessLevels))
     }
 
     private func configureNextButton() {
         nextButton.setTitle(InitialSetupTexts.next, for: .normal)
         nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
-        nextButton.backgroundColor = .systemBlue
         nextButton.setTitleColor(.white, for: .normal)
+        nextButton.backgroundColor = .systemBlue
         nextButton.layer.cornerRadius = 24
         nextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         

@@ -110,10 +110,10 @@ final class RegistrationVC: UIViewController {
     }
     
     private func configureInputFields() {
-        firstNameInput.configure(with: .init(text: RegistrationTexts.firstName, iconName: IconNames.personIcon, width: view.width * 0.8, height: 50))
-        lastNameInput.configure(with: .init(text: RegistrationTexts.lastName, iconName: IconNames.personIcon, width: view.width * 0.8, height: 50))
-        emailInput.configure(with: .init(text: RegistrationTexts.email, iconName: IconNames.mailIcon, width: view.width * 0.8, height: 50))
-        passwordInput.configure(with: .init(text: RegistrationTexts.password, iconName: IconNames.keyIcon, width: view.width * 0.8, height: 50))
+        firstNameInput.configure(with: .init(text: RegistrationTexts.firstName, width: view.width * 0.8, height: 50))
+        lastNameInput.configure(with: .init(text: RegistrationTexts.lastName, width: view.width * 0.8, height: 50))
+        emailInput.configure(with: .init(text: RegistrationTexts.email, width: view.width * 0.8, height: 50))
+        passwordInput.configure(with: .init(text: RegistrationTexts.password, width: view.width * 0.8, height: 50))
     }
     
     private func configureRegisterButton() {
