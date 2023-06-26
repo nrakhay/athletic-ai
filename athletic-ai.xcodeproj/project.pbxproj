@@ -22,6 +22,11 @@
 		5C99E4672A3EEE8500859584 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99E4662A3EEE8500859584 /* BlueButton.swift */; };
 		5C99E46D2A41A07700859584 /* WorkoutPreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99E46C2A41A07700859584 /* WorkoutPreferencesVC.swift */; };
 		5C99E46F2A41A17100859584 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99E46E2A41A17100859584 /* TextFieldData.swift */; };
+		5C99E4712A4305E000859584 /* InitialPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99E4702A4305E000859584 /* InitialPageView.swift */; };
+		5C99E4772A43143F00859584 /* ConstantNums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99E4762A43143F00859584 /* ConstantNums.swift */; };
+		5CD4D68C2A4996C100715E02 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4D68B2A4996C100715E02 /* Coordinator.swift */; };
+		5CD4D68E2A49981F00715E02 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4D68D2A49981F00715E02 /* MainCoordinator.swift */; };
+		5CD4D6902A499C7B00715E02 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4D68F2A499C7B00715E02 /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		5C99E4662A3EEE8500859584 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		5C99E46C2A41A07700859584 /* WorkoutPreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPreferencesVC.swift; sourceTree = "<group>"; };
 		5C99E46E2A41A17100859584 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
+		5C99E4702A4305E000859584 /* InitialPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPageView.swift; sourceTree = "<group>"; };
+		5C99E4762A43143F00859584 /* ConstantNums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNums.swift; sourceTree = "<group>"; };
+		5CD4D68B2A4996C100715E02 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5CD4D68D2A49981F00715E02 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		5CD4D68F2A499C7B00715E02 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +92,11 @@
 				5C70D89E2A38EA4900EC8436 /* Models */,
 				5C70D88A2A38E8D700EC8436 /* AppDelegate.swift */,
 				5C70D88C2A38E8D700EC8436 /* SceneDelegate.swift */,
+				5CD4D68B2A4996C100715E02 /* Coordinator.swift */,
 				5C70D8932A38E8D900EC8436 /* Assets.xcassets */,
 				5C70D8952A38E8D900EC8436 /* LaunchScreen.storyboard */,
 				5C70D8982A38E8D900EC8436 /* Info.plist */,
+				5CD4D68D2A49981F00715E02 /* MainCoordinator.swift */,
 			);
 			path = "athletic-ai";
 			sourceTree = "<group>";
@@ -100,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				5C70D8BE2A3AF6D700EC8436 /* InputFieldView.swift */,
+				5C99E4702A4305E000859584 /* InitialPageView.swift */,
+				5CD4D68F2A499C7B00715E02 /* RegistrationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +144,7 @@
 				5C70D8AF2A399C0100EC8436 /* Constraints.swift */,
 				5C70D8C02A3B213300EC8436 /* ConstantTexts.swift */,
 				5C99E46E2A41A17100859584 /* TextFieldData.swift */,
+				5C99E4762A43143F00859584 /* ConstantNums.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -212,7 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD4D68E2A49981F00715E02 /* MainCoordinator.swift in Sources */,
+				5CD4D68C2A4996C100715E02 /* Coordinator.swift in Sources */,
 				5C70D88B2A38E8D700EC8436 /* AppDelegate.swift in Sources */,
+				5CD4D6902A499C7B00715E02 /* RegistrationView.swift in Sources */,
 				5C99E4652A3EDC5600859584 /* InitialSetupVC.swift in Sources */,
 				5C70D8AC2A398AF700EC8436 /* Helper.swift in Sources */,
 				5C70D88D2A38E8D700EC8436 /* SceneDelegate.swift in Sources */,
@@ -220,6 +238,8 @@
 				5C70D8A62A38EEF600EC8436 /* InitialPageVC.swift in Sources */,
 				5C70D8A82A39761200EC8436 /* RegistrationVC.swift in Sources */,
 				5C70D8BF2A3AF6D700EC8436 /* InputFieldView.swift in Sources */,
+				5C99E4712A4305E000859584 /* InitialPageView.swift in Sources */,
+				5C99E4772A43143F00859584 /* ConstantNums.swift in Sources */,
 				5C99E4672A3EEE8500859584 /* BlueButton.swift in Sources */,
 				5C70D8A42A38EA8600EC8436 /* Extensions.swift in Sources */,
 				5C70D8C12A3B213300EC8436 /* ConstantTexts.swift in Sources */,

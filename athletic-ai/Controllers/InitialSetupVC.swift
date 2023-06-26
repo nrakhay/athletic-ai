@@ -7,7 +7,8 @@
 
 import UIKit
 
-class InitialSetupVC: UIViewController {
+class InitialSetupVC: UIViewController, Coordinating {
+    var coordinator: Coordinator?
     private var headerLabel = UILabel()
     private var stackView = UIStackView()
     
